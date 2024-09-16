@@ -1,0 +1,16 @@
+<p>new-expenses works!</p>
+<form (submit)="addExpenses()">
+<label>סכום הוצאה</label><br>
+<input type="number" [(ngModel)]="newExpenses.sum" name="sum"><br>
+<label>תאריך</label><br>
+<input type="date" [(ngModel)]="newExpenses.date" name="date"><br>
+<label>אפשרות תשלום</label><br>
+<select  [(ngModel)]="newExpenses.paymentMethods" name="paymentOption">
+    <option value="מזומן">מזומן</option>
+    <option value="אשראי">אשראי</option>
+    <option value="העברה בנקאית">העברה בנקאית</option>
+</select><br>
+<label>פירוט</label><br>
+<input type="text" [(ngModel)]="newExpenses.detail" name="detail"><br>
+<input type="submit" value="שמור">
+</form>

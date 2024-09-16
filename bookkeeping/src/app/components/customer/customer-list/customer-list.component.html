@@ -1,0 +1,41 @@
+
+<!-- <h1>customer list</h1> -->
+<!-- 
+<select>
+    <option value="">Select a name</option>
+    <option *ngFor="let cust of allcustomers" [value]="cust.customerName">{{cust.customerName}}</option>
+</select>
+<p></p>  -->
+
+
+
+
+    <div *ngFor="let cust of allcustomers" class="cust">
+        <label>שם:</label>
+       <h4>{{cust.customerName}}</h4> 
+       <label>לקוח מספר:</label>
+       <p>{{cust.custId}}</p> 
+       <label>סטטוס:</label>
+       
+       <p >{{cust.status ? 'פעיל' : 'לא פעיל' }}</p> 
+       <label>כתובת:</label>
+       <p>{{cust.address}}</p> 
+       <a routerLink="InvoiceByCustId" routerLinkActive="active">ggggg</a>
+       <!-- <input type="button" value="לקבלות של {{cust.customerName}}" (click)="getInvoiceById()">
+    <app-invoices-list *ngIf="showInvoiceById" [custId]="cust.custId"></app-invoices-list> -->
+    </div>
+
+
+<!-- <p-accordion>
+    <p-accordionTab *ngFor="let customer of allcustomers">
+        <ng-template pTemplate="header">
+            <div class="head">{{ customer.customerName }}</div>
+        </ng-template>
+          <div class="accordion-content">
+            <p class="m-0">
+   
+               kkkkk
+            </p>
+        </div>
+    </p-accordionTab>
+</p-accordion>-->
