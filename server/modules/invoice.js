@@ -95,7 +95,11 @@ const getInvoiceByUserId = async (id) => {
     mongoOperations.Collection = process.env.MONGO_INVOICING_COLLECTION
     try {
         const all = await mongoOperations.find({ filter: {} })
-        const response = all.filter(item => item.user.userId == id)
+        const response = all.filter(item => item.user.custId == id)
+        console.log("=============================");
+        
+        console.log({response});
+        
         return response
     } catch (error) {
         throw error
