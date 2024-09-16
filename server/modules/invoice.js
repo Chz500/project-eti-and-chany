@@ -79,11 +79,12 @@ const getInvoiceByYear = async (year) => {
 const getInvoiceBetween = async (date1, date2) => {
     mongoOperations.Collection = process.env.MONGO_INVOICING_COLLECTION
     try {
+console.log(date1,date2);
 
         const all = await mongoOperations.find({ filter: {} })
         const response = all.filter(item =>
             item.date > date1 && item.date <= date2)
-        console.log({ response });
+        console.log("date",{ response });
         return response
     } catch (error) {
         throw error
@@ -94,8 +95,7 @@ const getInvoiceByUserId = async (id) => {
     mongoOperations.Collection = process.env.MONGO_INVOICING_COLLECTION
     try {
         const all = await mongoOperations.find({ filter: {} })
-        const response = all.filter(item => item.user.userId === id)
-        console.log({ response });
+        const response = all.filter(item => item.user.userId == id)
         return response
     } catch (error) {
         throw error
