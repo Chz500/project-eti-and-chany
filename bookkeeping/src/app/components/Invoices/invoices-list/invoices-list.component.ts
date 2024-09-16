@@ -25,15 +25,18 @@ export class InvoicesListComponent {
   month?: string
   year?: string
   ngOnInit() {
+
     this.dataServices.getAllCustomers().subscribe(data => {
       this.allcustomers = data;
     });
+
     this.route.queryParams.subscribe(params => {
       this.custId = params['custId'];
       this.dateFrom = params['dateFrom']
       this.untilDate = params['untilDate']
       this.month = params['month']
       this.year = params['year']
+
 
 
       if (this.custId) {
@@ -67,6 +70,7 @@ export class InvoicesListComponent {
             }
       }
     });
+
 
 
   }
