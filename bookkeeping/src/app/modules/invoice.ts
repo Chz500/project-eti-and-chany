@@ -5,14 +5,7 @@ export interface Invoice {
     paymentOptions:string
     user:Customer
     sum:number
-    Prote:string
+    details:string
     date:string
 }
-// export interface Receipt {
-//     receiptNumber: number,
-//     customer: Customer,
-//     sum: number,
-//     paymentMethods:string,
-//     date:Date,
-//     description:string
-// }
+
