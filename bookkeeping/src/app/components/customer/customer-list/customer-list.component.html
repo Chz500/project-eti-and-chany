@@ -21,12 +21,14 @@
     <p>{{cust.address}}</p>
     <a routerLink="InvoiceByCustId" routerLinkActive="active">ggggg</a>
 
-    <input type="button" (click)="add()" value="add customer">
-    <div *ngIf="ifToAdd">
-       <app-new-customer></app-new-customer>
-    </div>
+    
+   
 </div>
 
+<input type="button" (click)="add()" value="add customer">
+<div *ngIf="ifToAdd">
+    <app-new-customer></app-new-customer>
+ </div>
 
 
 <!-- <p-accordion>
