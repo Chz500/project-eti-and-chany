@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class MonthOrYearComponent {
   selectedIOrE?:string
   monthOrYear?:string
-  selected?:string
+  selected?:number
   constructor(private router: Router){}
   serch(){
     if(this.selectedIOrE==="invoices")
