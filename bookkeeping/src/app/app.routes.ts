@@ -7,6 +7,7 @@ import { MonthOrYearComponent } from './components/month-or-year/month-or-year.c
 import { DataSegmentationComponent } from './components/data-segmentation/data-segmentation.component';
 import { NewExpensesComponent } from './components/expenses/new-expenses/new-expenses.component';
 import { NewInvoiceComponent } from './components/Invoices/new-invoice/new-invoice.component';
+import { CustomerListComponent } from './components/customer/customer-list/customer-list.component';
 
 export const routes: Routes = [
     { path: "listExpenses", component: ExpensesListComponent },
@@ -16,5 +17,7 @@ export const routes: Routes = [
     { path: 'MonthOrYear', component: MonthOrYearComponent },
     { path: 'data segmentation', component: DataSegmentationComponent },
     { path: 'saving expenses', component: NewExpensesComponent },
-    { path: 'newInvouce', component: NewInvoiceComponent }
+    { path: 'newInvouce', component: NewInvoiceComponent },
+    { path: 'customerList', component: CustomerListComponent }
+
 ];

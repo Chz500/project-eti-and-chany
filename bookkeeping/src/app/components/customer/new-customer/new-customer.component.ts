@@ -33,6 +33,7 @@ export class NewCustomerComponent {
     this.dataService.addCustomer(customer).subscribe(data=>{
       console.log({data});
       this.myForm.reset()
+      location.reload()
     })
     
   }

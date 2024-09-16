@@ -1,4 +1,3 @@
-
 <!-- <h1>customer list</h1> -->
 <!-- 
 <select>
@@ -10,20 +9,24 @@
 
 
 
-    <div *ngFor="let cust of allcustomers" class="cust">
-        <label>שם:</label>
-       <h4>{{cust.customerName}}</h4> 
-       <label>לקוח מספר:</label>
-       <p>{{cust.custId}}</p> 
-       <label>סטטוס:</label>
-       
-       <p >{{cust.status ? 'פעיל' : 'לא פעיל' }}</p> 
-       <label>כתובת:</label>
-       <p>{{cust.address}}</p> 
-       <a routerLink="InvoiceByCustId" routerLinkActive="active">ggggg</a>
-       <!-- <input type="button" value="לקבלות של {{cust.customerName}}" (click)="getInvoiceById()">
-    <app-invoices-list *ngIf="showInvoiceById" [custId]="cust.custId"></app-invoices-list> -->
+<div *ngFor="let cust of allcustomers" class="cust">
+    <label>שם:</label>
+    <h4>{{cust.customerName}}</h4>
+    <label>לקוח מספר:</label>
+    <p>{{cust.custId}}</p>
+    <label>סטטוס:</label>
+
+    <p>{{cust.status ? 'פעיל' : 'לא פעיל' }}</p>
+    <label>כתובת:</label>
+    <p>{{cust.address}}</p>
+    <a routerLink="InvoiceByCustId" routerLinkActive="active">ggggg</a>
+
+    <input type="button" (click)="add()" value="add customer">
+    <div *ngIf="ifToAdd">
+       <app-new-customer></app-new-customer>
     </div>
+</div>
+
 
 
 <!-- <p-accordion>
