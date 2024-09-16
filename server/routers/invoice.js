@@ -94,6 +94,8 @@ router.get('/getInvoicesBetween/:date1/:date2',async(req,res)=>{
         const {date1,date2} = req.params
         const newDate1=new Date(date1)
         const newDate2=new Date(date2)
+    
+        
         const invoiceByMonth=await getInvoiceBetween(newDate1,newDate2) 
         res.status(201).json(invoiceByMonth)
     }
@@ -109,6 +111,7 @@ router.get('/getInvoicesBetween/:date1/:date2',async(req,res)=>{
 })
 router.get('/getInvoicesByUserId/:id',async(req,res)=>{
     try{
+
         const {id} = req.params
         const allInvoices=await getInvoiceByUserId(parseInt(id)) 
         res.status(201).json(allInvoices)
