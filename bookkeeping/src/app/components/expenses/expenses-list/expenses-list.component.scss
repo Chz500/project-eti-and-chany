@@ -1,0 +1,44 @@
+#expense{
+    width: 500px;
+    border: 2px solid #FFCC0F;
+    align-items: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+.centered-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.external{
+    width: 300px;
+    height: 80px;
+    background-color: #FFCC0F;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  
+}
+.internal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 40px;
+    background-color: #D91C5C;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+label{
+    margin-top: 10px;
+}
+h1{
+    color: #D91C5C;
+}

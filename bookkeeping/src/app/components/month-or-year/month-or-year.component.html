@@ -1,12 +1,23 @@
-<form #searchForm="ngForm" (ngSubmit)="search()">
-    <select [(ngModel)]="selectedIOrE" required name="what">
+<div class="centered">
+<form #searchForm="ngForm" (ngSubmit)="search()" id="expense">
+    <div class="external">
+        <label>expenses or invoices</label>
+    <select [(ngModel)]="selectedIOrE" required name="what" class="internal">
         <option value="expenses" >expenses</option>
         <option value="invoices">invoices</option>
     </select>
-    <select [(ngModel)]="monthOrYear" required name="yearOrMonth">
+    </div>
+    <div class="external">
+        <label>month or year</label>
+    <select [(ngModel)]="monthOrYear" required name="yearOrMonth" class="internal">
         <option value="month">month</option>
         <option value="year">year</option>
     </select>
-    <input type="text" [(ngModel)]="selected" required name="selected" pattern="[0-9]*" maxlength="4">
+    </div>
+    <div class="external">
+        <label>enter {{monthOrYear}}</label>
+    <input type="text" [(ngModel)]="selected" required name="selected" pattern="[0-9]*" maxlength="4" class="internal">
+    </div>
     <button type="submit" [disabled]="!searchForm.form.valid">Submit</button>
 </form>
+</div>

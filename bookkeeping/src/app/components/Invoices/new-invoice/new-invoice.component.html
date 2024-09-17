@@ -1,23 +1,36 @@
-<form #expensesForm="ngForm" (ngSubmit)="addInvoice()">
-    <label>invoiceSum</label><br>
-    <input type="number" [(ngModel)]="newInvoice.sum" name="sum" required min="0"><br>
-    <div *ngIf="newInvoice.sum<0">A number less than zero</div>
-    <label>date</label><br>
-    <input type="date" [(ngModel)]="newInvoice.date" name="date" required min="{{today | date:'yyyy-MM-dd'}}" (change)="validateDate()"><br>
-    <label>paymentOptions </label><br>
-    <select [(ngModel)]="newInvoice.paymentOptions" name="paymentOption" required>
-        <option value="cash">cash</option>
-        <option value="credit">credit</option>
-        <option value="bank transfer">bank transfer</option>
-    </select><br>
-    <label>details</label><br>
-    <input type="text" [(ngModel)]="newInvoice.details" name="detail"><br>
-    <label>customer</label><br>
-    <select [(ngModel)]="thisUserId" name="selectUser" required>
-        <option *ngFor="let cust of allcustomers" [value]="cust.custId">
-            {{cust.customerName}}
-        </option>
-    </select>
-    <button type="submit" [disabled]="!expensesForm.form.valid">Submit</button>
+<div class="centered">
+    <form #expensesForm="ngForm" (ngSubmit)="addInvoice()" id="Invoice">
+        <div class="external">
+            <label>invoiceSum</label><br>
+            <input type="number" [(ngModel)]="newInvoice.sum" name="sum" required min="0" class="internal">
+        </div>
+        <div *ngIf="newInvoice.sum<0">A number less than zero</div>
+        <div class="external">
+            <label>date</label><br>
+            <input type="date" [(ngModel)]="newInvoice.date" name="date" required min="{{today | date:'yyyy-MM-dd'}}"
+                (change)="validateDate()" class="internal">
+        </div>
+        <div class="external">
+            <label>paymentOptions </label><br>
+            <select [(ngModel)]="newInvoice.paymentOptions" name="paymentOption" required class="internal">
+                <option value="cash">cash</option>
+                <option value="credit">credit</option>
+                <option value="bank transfer">bank transfer</option>
+            </select>
+        </div>
+        <div class="external">
+            <label>details</label>
+            <input type="text" [(ngModel)]="newInvoice.details" name="detail" class="internal">
+        </div>
+        <div class="external">
+            <label>customer</label>
+            <select [(ngModel)]="thisUserId" name="selectUser" required class="internal">
+                <option *ngFor="let cust of allcustomers" [value]="cust.custId">
+                    {{cust.customerName}}
+                </option>
+            </select>
+        </div>
+        <button type="submit" [disabled]="!expensesForm.form.valid">Submit</button>
 
-</form>
+    </form>
+</div>

@@ -1,17 +1,21 @@
-
-<div *ngFor="let cust of allcustomers" class="cust">
-    <label>customerNum</label>
-    <p>{{cust.custId}}</p>
-    <label>name</label>
-    <h4>{{cust.customerName}}</h4>
-    <label>email</label>
-    <p>{{cust.email}}</p>
-   
+<div class="centered-list">
+    <div *ngFor="let cust of allcustomers" id="cust">
+        <div class="external">
+            <label>customerNum </label>
+            <div class="internal">{{cust.custId}}</div>
+        </div>
+        <div class="external">
+            <label>name </label>
+            <div class="internal">{{cust.customerName}}</div>
+        </div>
+        <div class="external">
+            <label>email </label>
+            <div class="internal">{{cust.email}}</div>
+        </div>
+    </div>
+    <input type="button" (click)="add()" value="add customer">
+    <div *ngIf="ifToAdd">
+        <app-new-customer></app-new-customer>
+    </div>
 </div>
-
-<input type="button" (click)="add()" value="add customer">
-<div *ngIf="ifToAdd">
-    <app-new-customer></app-new-customer>
- </div>
-
 
