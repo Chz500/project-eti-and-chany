@@ -15,11 +15,7 @@ const existCustomerName = async (customerName) => {
 }
 
 
-//user מקבלת
-// ושולחים אותה ל
-//db
 const addCustomer = async (customer) => {
-    //TODO:check user object
     if (await existCustomerName(customer.customerName)) {
         const error = {
             message: `customerName '${customer.customerName}' is not available`,
@@ -27,11 +23,9 @@ const addCustomer = async (customer) => {
         }
         throw error
     }
-    // const id = v4()
     const arr = await getAllCustomers()
     const custId = arr.length > 0 ? Math.max(...arr.map(obj => obj.custId)) + 1 : 1;
     customer.custId = custId
-    // TODO:save user in db
     try {
         mongoOperations.Collection = process.env.MONGO_CUSTOMERS_COLLECTION
         const response = await mongoOperations.insertItem(customer)

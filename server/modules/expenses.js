@@ -4,7 +4,7 @@ const { MongoOperations } = require('../services/mongo/mongo-operations')
 const { errorTypes } = require('../utils/types')
 const mongoOperations = new MongoOperations(process.env.MONGO_BOOKKEEPING_DB)
 
-const addExpense = async (expens) => {
+const addExpens = async (expens) => {
     const arr = await getAllExpenses()
     const expensId = arr.length > 0 ? Math.max(...arr.map(obj => obj.expensId)) + 1 : 1;
     expens.expensId = expensId
@@ -83,4 +83,4 @@ const getExpensesBetween= async (date1,date2) => {
     }
 }
 
-module.exports = { addExpense, getExpenssById, getAllExpenses, getExpensesByMonth, getExpensesByYear,getExpensesBetween }
+module.exports = { addExpens, getExpenssById, getAllExpenses, getExpensesByMonth, getExpensesByYear,getExpensesBetween }
