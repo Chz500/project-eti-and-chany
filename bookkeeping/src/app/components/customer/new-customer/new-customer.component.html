@@ -1,11 +1,15 @@
-<form [formGroup]="myForm" (submit)="save()" id="form">
-    <h2>A new customer</h2>
-    <label>customer name:</label><br>
-    <input type="text" formControlName="customerName"><br>
-    
-    <label>email:</label><br>
-    <input type="email" formControlName="email">
+<div class="centered">
+    <form [formGroup]="myForm" (submit)="save()" id="cust">
+        <h2>A new customer</h2>
+        <div class="external">
+            <label>customer name:</label>
+            <input type="text" formControlName="customerName" class="internal">
+        </div>
+        <div class="external">
+            <label>email:</label><br>
+            <input type="email" formControlName="email" class="internal">
+        </div>
+        <input type="submit" [disabled]="!myForm.valid" value="submit">
 
-    <input type="submit"  [disabled]="!myForm.valid">
-
-</form>
+    </form>
+</div>

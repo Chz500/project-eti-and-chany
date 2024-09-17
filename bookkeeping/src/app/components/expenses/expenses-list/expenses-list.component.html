@@ -1,11 +1,22 @@
 
-<div *ngFor="let expense of allExpenses" class="cust">
-    <label>date:</label>
-   <h4>{{expense.date}}</h4> 
-   <label>sum :</label>
-   <p>{{expense.sum}}</p> 
-   <label>payment Options:</label>
-   <p>{{expense.paymentOptions}}</p> 
-   <label>details:</label>
-   <p>{{expense.detail}}</p> 
+<div class="centered-list">
+    <h1>expenses list</h1>
+    <div *ngFor="let expense of allExpenses" id="expense">
+        <div class="external">
+            <label>date</label>
+            <div class="internal">{{expense.date}}</div>
+        </div>
+        <div class="external">
+            <label>sum</label>
+            <div class="internal">{{expense.sum}}</div>
+        </div>
+        <div class="external">
+            <label>payment Optionsdiv</label>
+            <div class="internal">{{expense.paymentOptions}}</div>
+        </div>
+        <div class="external">
+            <label>detailsdiv</label>
+            <div class="internal">{{expense.detail}}</div>
+        </div>
+    </div>
 </div>

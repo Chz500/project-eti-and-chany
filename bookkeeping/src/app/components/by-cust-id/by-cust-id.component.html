@@ -1,9 +1,13 @@
-<p>by-cust-id works!</p>
+<div class="centered">
 
-<select [(ngModel)]="selectedId">
-  <option *ngFor="let cust of allcustomers" [value]="cust.custId">
-    {{cust.customerName}}
-  </option>
-</select>
+  <div class="external">
+    <label>selact a customer</label>
+    <select [(ngModel)]="selectedId" class="internal">
+      <option *ngFor="let cust of allcustomers" [value]="cust.custId" >
+        {{cust.customerName}}
+      </option>
+    </select>
+  </div>
+  <input type="button" value="search" (click)="search()">
 
-<input type="button" value="חפש" (click)="search()">
+</div>

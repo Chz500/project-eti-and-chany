@@ -1,14 +1,20 @@
-<p>between-two-dates works!</p>
-<form #searchForm="ngForm" (ngSubmit)="search()">
-    <label>from date</label><br>
-    <input type="date" value="from date" [(ngModel)]="dateFrom" name="date1" required><br>
-    <label> until date</label><br>
-    <input type="date" value="until date " [(ngModel)]="untilDate" name="data2" required >
-
-        <select  [(ngModel)]="selectedIOrE" name="which" required>
+<div class="centered">
+    <form #searchForm="ngForm" (ngSubmit)="search()" id="expense">
+        <div class="external">
+        <label>from date</label>
+        <input type="date" value="from date" [(ngModel)]="dateFrom" name="date1" required class="internal">
+        </div>
+        <div class="external">
+        <label> until date</label>
+        <input type="date" value="until date " [(ngModel)]="untilDate" name="data2" required class="internal">
+        </div>
+        <div class="external">
+            <label>expenses or invoices</label>
+        <select [(ngModel)]="selectedIOrE" name="which" required class="internal">
             <option value="expenses">expenses</option>
             <option value="invoices">invoices</option>
         </select>
- 
+        </div>
         <button type="submit" [disabled]="!searchForm.form.valid">Submit</button>
-<form></form>
+    </form>
+</div>

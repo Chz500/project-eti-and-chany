@@ -1,40 +1,20 @@
-<!-- <h1>customer list</h1> -->
-<!-- 
-<select>
-    <option value="">Select a name</option>
-    <option *ngFor="let cust of allcustomers" [value]="cust.customerName">{{cust.customerName}}</option>
-</select>
-<p></p>  -->
-
-
-
-
-<div *ngFor="let cust of allcustomers" class="cust">
-    <label>customerNum:</label>
-    <p>{{cust.custId}}</p>
-    <label>name:</label>
-    <h4>{{cust.customerName}}</h4>
-    <label>email:</label>
-    <p>{{cust.email}}</p>
-   
-</div>
-
-<input type="button" (click)="add()" value="add customer">
-<div *ngIf="ifToAdd">
-    <app-new-customer></app-new-customer>
- </div>
-
-
-<!-- <p-accordion>
-    <p-accordionTab *ngFor="let customer of allcustomers">
-        <ng-template pTemplate="header">
-            <div class="head">{{ customer.customerName }}</div>
-        </ng-template>
-          <div class="accordion-content">
-            <p class="m-0">
-   
-               kkkkk
-            </p>
+<div class="centered-list">
+    <div *ngFor="let cust of allcustomers" id="cust">
+        <div class="external">
+            <label>customerNum </label>
+            <div class="internal">{{cust.custId}}</div>
         </div>
-    </p-accordionTab>
-</p-accordion>-->
+        <div class="external">
+            <label>name </label>
+            <div class="internal">{{cust.customerName}}</div>
+        </div>
+        <div class="external">
+            <label>email </label>
+            <div class="internal">{{cust.email}}</div>
+        </div>
+    </div>
+    <input type="button" (click)="add()" value="add customer">
+    <div *ngIf="ifToAdd">
+        <app-new-customer></app-new-customer>
+    </div>
+</div>
