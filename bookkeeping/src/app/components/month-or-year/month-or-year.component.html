@@ -1,10 +1,12 @@
-<select  [(ngModel)]="selectedIOrE">
-    <option value="expenses">expenses</option>
-    <option value="invoices">invoices</option>
-</select>
-<select  [(ngModel)]="monthOrYear">
-    <option value="month">month</option>
-    <option value="year">year</option>
-</select>
-<input type="text" [(ngModel)]="selected">
-<input type="button" value="search" (click)="search()">
+<form #searchForm="ngForm" (ngSubmit)="search()">
+    <select [(ngModel)]="selectedIOrE" required name="what">
+        <option value="expenses" >expenses</option>
+        <option value="invoices">invoices</option>
+    </select>
+    <select [(ngModel)]="monthOrYear" required name="yearOrMonth">
+        <option value="month">month</option>
+        <option value="year">year</option>
+    </select>
+    <input type="text" [(ngModel)]="selected" required name="selected" pattern="[0-9]*" maxlength="4">
+    <button type="submit" [disabled]="!searchForm.form.valid">Submit</button>
+</form>
