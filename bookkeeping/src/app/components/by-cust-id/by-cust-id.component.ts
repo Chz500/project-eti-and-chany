@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Customer } from '../../modules/interfaces';
+import { Customer } from '../../modules/customer';
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +19,7 @@ export class ByCustIdComponent {
       this.allcustomers = data;
     });
   }
-  serch(){
-    this.router.navigate(['../listInvouce'], { queryParams: { custId: this.selectedId } })
+  search(){
+    this.router.navigate(['../listInvoices'], { queryParams: { custId: this.selectedId } })
   }
 }

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { DataService } from '../../../services/data.service';
 import { Invoice } from '../../../modules/invoice';
 import { CommonModule } from '@angular/common';
-import { Customer } from '../../../modules/interfaces';
+import { Customer } from '../../../modules/customer';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -37,11 +37,10 @@ export class InvoicesListComponent {
       this.month = params['month']
       this.year = params['year']
 
-
-
       if (this.custId) {
         this.dataServices.getInvoiceByCustId(this.custId).subscribe(data => {
           this.allInvoice = data;
+          console.log("===================",{data});
         });
       }
       else {

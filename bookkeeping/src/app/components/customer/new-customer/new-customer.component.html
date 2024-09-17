@@ -1,14 +1,11 @@
 <form [formGroup]="myForm" (submit)="save()" id="form">
 
     <h2>A new customer</h2>
-    <label>customer name:</label>
-    <input type="text" formControlName="customerName">
+    <label>customer name:</label><br>
+    <input type="text" formControlName="customerName"><br>
     
-    <label>address:</label>
-    <input type="text" formControlName="address">
-
-    <label>status:</label>
-    <input type="text" formControlName="status">
+    <label>email:</label><br>
+    <input type="email" formControlName="email">
 
     <input type="submit">
 

@@ -1,9 +1,11 @@
-<p>expenses-list works!</p>
-<div *ngFor="let expens of allExpenses" class="cust">
-    <label>שם:</label>
-   <h4>{{expens.sum}}</h4> 
-   <label>לקוח מספר:</label>
-   <p>{{expens.date}}</p> 
-   <label>כתובת:</label>
-   <p>{{expens.paymentMethods}}</p> 
+
+<div *ngFor="let expense of allExpenses" class="cust">
+    <label>date:</label>
+   <h4>{{expense.date}}</h4> 
+   <label>sum :</label>
+   <p>{{expense.sum}}</p> 
+   <label>payment Options:</label>
+   <p>{{expense.paymentOptions}}</p> 
+   <label>details:</label>
+   <p>{{expense.detail}}</p> 
 </div>

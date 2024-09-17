@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Expenses } from '../../../modules/expenses/expenses';
+import { Expenses } from '../../../modules/expenses';
 import { DataService } from '../../../services/data.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Customer } from '../../../modules/interfaces';
+import { Customer } from '../../../modules/customer';
 
 @Component({
   selector: 'app-expenses-list',
@@ -20,7 +20,7 @@ export class ExpensesListComponent {
     })
   }
   allcustomers = new Array<Customer>();
-  allExpevses = new Array<Expenses>();
+  // allExpevses = new Array<Expenses>();
   selectedCust?: number
   dateFrom?: Date
   untilDate?: Date
@@ -33,7 +33,7 @@ export class ExpensesListComponent {
       this.month = params['month']
       this.year = params['year']
     });
-console.log();
+;
 
     this.dataServices.getAllCustomers().subscribe(data => {
       this.allcustomers = data;
@@ -42,7 +42,7 @@ console.log();
   
       if (this.untilDate && this.dateFrom) {
         this.dataServices.getExpensesBeetwin2Dates(this.dateFrom, this.untilDate).subscribe(data => {
-          this.allExpevses = data;
+          this.allExpenses = data;
           console.log(this.untilDate)
         });
       }

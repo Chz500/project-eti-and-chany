@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Customer } from '../../../modules/interfaces';
+import { Customer } from '../../../modules/customer';
 import { DataService } from '../../../services/data.service';
 import { AccordionModule } from 'primeng/accordion';
 import { InvoicesListComponent } from "../../Invoices/invoices-list/invoices-list.component";

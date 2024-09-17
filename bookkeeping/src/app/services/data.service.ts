@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Customer } from '../modules/interfaces';
+import { Customer } from '../modules/customer';
 import { Observable } from 'rxjs';
-import { Expenses } from '../modules/expenses/expenses';
+import { Expenses } from '../modules/expenses';
 import { Invoice } from '../modules/invoice';
 
 @Injectable({
@@ -16,8 +16,8 @@ export class DataService {
     return this.http.post<Customer>(`${this.baseUrl}/addCustomer`,
       newCustomer ,{headers: { 'content-type': "application/json" }})
   }
-  addExpenses(newExpens:Expenses):Observable<Expenses>{
-    return this.http.post<Expenses>(`${this.baseUrl}/addExpens`,
+  addExpensees(newExpens:Expenses):Observable<Expenses>{
+    return this.http.post<Expenses>(`${this.baseUrl}/addExpense`,
       newExpens ,{headers: { 'content-type': "application/json" }})
   }
   addInvoice(newInvoice:Invoice):Observable<Invoice>{

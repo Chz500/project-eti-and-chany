@@ -11,13 +11,13 @@ import { CustomerListComponent } from './components/customer/customer-list/custo
 
 export const routes: Routes = [
     { path: "listExpenses", component: ExpensesListComponent },
-    { path: "listInvouce", component: InvoicesListComponent },
+    { path: "listInvoices", component: InvoicesListComponent },
     { path: 'ByUserId', component: ByCustIdComponent },
     { path: 'Betwin2Month', component: BetweenTwoDatesComponent },
     { path: 'MonthOrYear', component: MonthOrYearComponent },
     { path: 'data segmentation', component: DataSegmentationComponent },
     { path: 'saving expenses', component: NewExpensesComponent },
-    { path: 'newInvouce', component: NewInvoiceComponent },
+    { path: 'newInvoice', component: NewInvoiceComponent },
     { path: 'customerList', component: CustomerListComponent }
 
 ];

@@ -16,9 +16,9 @@ export class BetweenTwoDatesComponent {
   untilDate?:Date
   selectedIOrE?:string
   constructor(private router: Router){}
-  serch(){
+  search(){
     if(this.selectedIOrE==="invoices")
-    this.router.navigate(['../listInvouce'], { queryParams: { dateFrom: this.dateFrom, untilDate: this.untilDate } })
+    this.router.navigate(['../listInvoices'], { queryParams: { dateFrom: this.dateFrom, untilDate: this.untilDate } })
   else{
     this.router.navigate(['../listExpenses'], { queryParams: { dateFrom: this.dateFrom, untilDate: this.untilDate } })
   }
