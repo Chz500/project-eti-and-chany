@@ -20,7 +20,6 @@ const addInvoice = async (invoice) => {
     try {
         mongoOperations.Collection = process.env.MONGO_INVOICING_COLLECTION
         const response = await mongoOperations.insertItem(invoice)
-        console.log({ response })
         return invoice
     }
     catch (error) {
@@ -32,7 +31,6 @@ const getAllInvoices = async () => {
     mongoOperations.Collection = process.env.MONGO_INVOICING_COLLECTION
     try {
         const response = await mongoOperations.find({ filter: {} })
-        console.log({ response });
         return response
     } catch (error) {
         throw error
@@ -43,7 +41,6 @@ const getInvoiceById = async (id) => {
     mongoOperations.Collection = process.env.MONGO_INVOICING_COLLECTION
     try {
         const response = await mongoOperations.find({ filter: { invoiceId: id } })
-        console.log({ response });
         return response
     } catch (error) {
         throw error
@@ -55,7 +52,6 @@ const getInvoiceByMonth = async (month) => {
     try {
         const all = await mongoOperations.find({ filter: {} })
         const response = all.filter(item => item.date.getMonth() === month - 1)
-        console.log({ response });
         return response
     } catch (error) {
         throw error
@@ -65,11 +61,9 @@ const getInvoiceByMonth = async (month) => {
 const getInvoiceByYear = async (year) => {
     mongoOperations.Collection = process.env.MONGO_INVOICING_COLLECTION
     try {
-        console.log(year);
         const all = await mongoOperations.find({ filter: {} })
         const response = all.filter(item =>
             item.date.getFullYear() === year)
-        console.log({ response });
         return response
     } catch (error) {
         throw error
@@ -79,12 +73,9 @@ const getInvoiceByYear = async (year) => {
 const getInvoiceBetween = async (date1, date2) => {
     mongoOperations.Collection = process.env.MONGO_INVOICING_COLLECTION
     try {
-console.log(date1,date2);
-
         const all = await mongoOperations.find({ filter: {} })
         const response = all.filter(item =>
             item.date > date1 && item.date <= date2)
-        console.log("date",{ response });
         return response
     } catch (error) {
         throw error
@@ -96,10 +87,6 @@ const getInvoiceByUserId = async (id) => {
     try {
         const all = await mongoOperations.find({ filter: {} })
         const response = all.filter(item => item.user.custId == id)
-        console.log("=============================");
-        
-        console.log({response});
-        
         return response
     } catch (error) {
         throw error

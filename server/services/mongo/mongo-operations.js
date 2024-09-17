@@ -25,10 +25,7 @@ class MongoOperations {
     }
 
     async find({ filter = {} } = {}) {
-        
         const result = await this.myCollection.find(filter).toArray();
-        // console.log({result});
-        
         return result;
     }
 

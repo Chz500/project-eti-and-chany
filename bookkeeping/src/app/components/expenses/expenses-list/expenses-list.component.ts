@@ -20,7 +20,6 @@ export class ExpensesListComponent {
     })
   }
   allcustomers = new Array<Customer>();
-  // allExpevses = new Array<Expenses>();
   selectedCust?: number
   dateFrom?: Date
   untilDate?: Date
@@ -43,7 +42,6 @@ export class ExpensesListComponent {
       if (this.untilDate && this.dateFrom) {
         this.dataServices.getExpensesBeetwin2Dates(this.dateFrom, this.untilDate).subscribe(data => {
           this.allExpenses = data;
-          console.log(this.untilDate)
         });
       }
       else

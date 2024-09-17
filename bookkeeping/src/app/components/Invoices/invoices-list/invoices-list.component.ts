@@ -40,14 +40,12 @@ export class InvoicesListComponent {
       if (this.custId) {
         this.dataServices.getInvoiceByCustId(this.custId).subscribe(data => {
           this.allInvoice = data;
-          console.log("===================",{data});
         });
       }
       else {
         if (this.untilDate && this.dateFrom) {
           this.dataServices.getInvoiceBeetwin2Dates(this.dateFrom, this.untilDate).subscribe(data => {
             this.allInvoice = data;
-            console.log(this.untilDate);
           });
         }
         else

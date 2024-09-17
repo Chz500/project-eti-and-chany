@@ -20,20 +20,15 @@ export class NewExpensesComponent {
   constructor(private dataServices: DataService, private router: Router) { }
 
   addExpensees() {
-    console.log("addExpensees", this.newExpenses);
-
     this.dataServices.addExpensees(this.newExpenses).subscribe(data => {
-      console.log({ data });
       this.router.navigate(['../listExpenses'])
 
     })
   }
   validateDate() {
     const selectedDate = new Date(this.newExpenses.date);
-    console.log(this.newExpenses.date);
     const todayDate = new Date();
     if (selectedDate < todayDate) {
-      console.log("Selected date cannot be earlier than today or today.");
       this.newExpenses.date = '';
     }
   }

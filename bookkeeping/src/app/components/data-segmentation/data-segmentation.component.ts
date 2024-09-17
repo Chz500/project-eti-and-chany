@@ -41,8 +41,6 @@ export class DataSegmentationComponent {
       if(this.untilDate&&this.dateFrom){
         this.dataServices.getInvoiceBeetwin2Dates(this.dateFrom,this.untilDate).subscribe(data => {
           this.allInvoice = data;
-          console.log(this.untilDate);
-          
         });
       }
       else

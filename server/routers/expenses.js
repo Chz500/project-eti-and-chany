@@ -10,7 +10,6 @@ router.post('/addExpense',express.json(),async(req,res)=>{
         res.status(201).json(newExpens)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -25,7 +24,6 @@ router.get('/getAllExpenses',async(_,res)=>{
         res.status(201).json(allExpenses)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -42,7 +40,6 @@ router.get('/getExpensesById/:id',async(req,res)=>{
         res.status(201).json(allExpenses)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -59,7 +56,6 @@ router.get('/getExpensesByMonth/:month',async(req,res)=>{
     res.status(201).json(response)
     } 
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -76,7 +72,6 @@ router.get('/getExpensesByYear/:year',async(req,res)=>{
     res.status(201).json(response)
     } 
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -95,7 +90,6 @@ router.get('/getExpensesBetween/:getDate1/:getDate2',async(req,res)=>{
     res.status(201).json(response)
     } 
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }

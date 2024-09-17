@@ -30,7 +30,6 @@ export class NewCustomerComponent {
       email : controls['email'].value
     }
     this.dataService.addCustomer(customer).subscribe(data=>{
-      console.log({data});
       this.myForm.reset()
       location.reload()
     })

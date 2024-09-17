@@ -6,9 +6,7 @@ const router=express.Router()
 router.get('/checkcustomername/:customername',async(req,res)=>{
     try{
         const{customername}=req.params
-        console.log(customername);
         const response=await existCustomerName(customername)
-        console.log({response});
         res.status(200).json({exist:response})
     }catch(error){
         res.status(500).send(error.message)
@@ -22,7 +20,6 @@ router.post('/addCustomer',express.json(),async(req,res)=>{
         res.status(201).json(newCustomer)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -37,7 +34,6 @@ router.get('/getAllCustomers',async(_,res)=>{
         res.status(201).json(allCustomers)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -54,7 +50,6 @@ router.get('/getCustomersById/:id',async(req,res)=>{
         res.status(201).json(allCustomers)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }

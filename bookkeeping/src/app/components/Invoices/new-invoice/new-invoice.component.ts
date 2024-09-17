@@ -22,11 +22,8 @@ export class NewInvoiceComponent {
   addInvoice() {
 
     let  selectUser=this.allcustomers.filter(cust=>cust.custId==this.thisUserId)
-    console.log({selectUser},this.thisUserId);
     this.newInvoice.user=selectUser[0]
-    console.log("addInvoice",this.newInvoice);
     this.dataServices.addInvoice(this.newInvoice).subscribe(data => {
-      console.log({ data });
       this.router.navigate(['../listInvoices'])
     })
   }
@@ -37,7 +34,6 @@ export class NewInvoiceComponent {
   }
   validateDate() {
     const selectedDate = new Date(this.newInvoice.date);
-    console.log(this.newInvoice.date);
     const todayDate = new Date();
     if (selectedDate < todayDate) {
       this.newInvoice.date = '';
