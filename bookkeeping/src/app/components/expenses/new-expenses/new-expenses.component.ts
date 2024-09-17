@@ -22,7 +22,6 @@ export class NewExpensesComponent {
   addExpensees() {
     this.dataServices.addExpensees(this.newExpenses).subscribe(data => {
       this.router.navigate(['../listExpenses'])
-
     })
   }
   validateDate() {

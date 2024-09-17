@@ -6,11 +6,6 @@ const { errorTypes } = require('../utils/types')
 const mongoOperations = new MongoOperations(process.env.MONGO_BOOKKEEPING_DB)
 
 
-
-
-//user מקבלת
-// ושולחים אותה ל
-//db
 const addInvoice = async (invoice) => {
 
     const arr = await getAllInvoices()
