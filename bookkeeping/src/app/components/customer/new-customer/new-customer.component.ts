@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
 import { DataService } from '../../../services/data.service';
-import { Customer } from '../../../modules/interfaces';
+import { Customer } from '../../../modules/customer';
 
 @Component({
   selector: 'app-new-customer',
@@ -18,8 +18,7 @@ export class NewCustomerComponent {
   {
     this.myForm= new FormGroup ({
       customerName:new FormControl(''),
-      address:new FormControl(''),
-      status:new FormControl('')
+      email:new FormControl(''),
     })
   }
 
@@ -27,8 +26,7 @@ export class NewCustomerComponent {
     const { controls } = this.myForm
     let customer:Customer={
       customerName : controls['customerName'].value,
-      address : controls['address'].value,
-      status : controls['status'].value
+      email : controls['email'].value
     }
     this.dataService.addCustomer(customer).subscribe(data=>{
       console.log({data});

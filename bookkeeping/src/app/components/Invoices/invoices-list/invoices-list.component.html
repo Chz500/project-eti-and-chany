@@ -1,15 +1,17 @@
-<p>invoices-list works!</p>
-<!-- <input type="button" value="פילוח נתונים"(click)=" filter()"> -->
-<!-- <div *ngIf="toFilter"> 
-    <a href="ByUserId">לפי לקוח</a>
-    <a href="Betwin2Month">לפי 2 תאריכים</a>
-    <a href="MonthOrYear">לפי חודש או שנה </a>
-</div> -->
+
 <div *ngFor="let invoice of allInvoice" class="cust">
-    <label>סכום הכנסה:</label>
+   <label>name:</label>
+   <p>{{invoice.user.customerName}}</p> 
+
+   <label>date:</label>
+   <p>{{invoice.date}}</p> 
+
+    <label> sum:</label>
    <h4>{{invoice.sum}}</h4> 
-   <label>לקוח מספר:</label>
-   <p>{{invoice.details}}</p> 
-   <label>אפשרות תשלום:</label>
+   
+   <label>paymentOptions:</label>
    <p>{{invoice.paymentOptions}}</p> 
+
+   <label>details:</label>
+   <p>{{invoice.details}}</p> 
 </div>

@@ -1,21 +1,21 @@
 <form (submit)="addInvoice()">
-    <label>סכום הוצאה</label><br>
+    <label>invoiceSum</label><br>
     <input type="number" [(ngModel)]="newInvoice.sum" name="sum"><br>
-    <label>תאריך</label><br>
+    <label>date</label><br>
     <input type="date" [(ngModel)]="newInvoice.date" name="date"><br>
-    <label>אפשרות תשלום</label><br>
+    <label>paymentOptions </label><br>
     <select [(ngModel)]="newInvoice.paymentOptions" name="paymentOption">
-        <option value="מזומן">מזומן</option>
-        <option value="אשראי">אשראי</option>
-        <option value="העברה בנקאית">העברה בנקאית</option>
+        <option value="cash">cash</option>
+        <option value="credit">credit</option>
+        <option value="bank transfer">bank transfer</option>
     </select><br>
-    <label>פירוט</label><br>
+    <label>details</label><br>
     <input type="text" [(ngModel)]="newInvoice.details" name="detail"><br>
-    <label>לקוח</label><br>
+    <label>customer</label><br>
     <select [(ngModel)]="thisUserId" name="selectUser">
         <option *ngFor="let cust of allcustomers" [value]="cust.custId">
             {{cust.customerName}}
         </option>
     </select>
-    <input type="submit" value="שמור">
+    <input type="submit" value="save">
 </form>

@@ -1,14 +1,14 @@
 <p>between-two-dates works!</p>
 <div>
-    <label>מתאריך</label><br>
-    <input type="date" value="מתאריך" [(ngModel)]="dateFrom"><br>
-    <label>עד תאריך</label><br>
-    <input type="date" value="עד תאריך" [(ngModel)]="untilDate">
+    <label>from date</label><br>
+    <input type="date" value="from date" [(ngModel)]="dateFrom"><br>
+    <label> until date</label><br>
+    <input type="date" value="until date " [(ngModel)]="untilDate">
 
         <select  [(ngModel)]="selectedIOrE">
-            <option value="expenses">הוצאות</option>
-            <option value="invoices">קבלות</option>
+            <option value="expenses">expenses</option>
+            <option value="invoices">invoices</option>
         </select>
  
-    <input type="button" value="חפש" (click)="serch()">
+    <input type="button" value="חפש" (click)="search()">
 </div>

@@ -15,12 +15,12 @@ export class MonthOrYearComponent {
   monthOrYear?:string
   selected?:number
   constructor(private router: Router){}
-  serch(){
+  search(){
     if(this.selectedIOrE==="invoices")
       if(this.monthOrYear==="month")
-        this.router.navigate(['../listInvouce'], { queryParams: {month:this.selected}})
+        this.router.navigate(['../listInvoices'], { queryParams: {month:this.selected}})
       else{
-        this.router.navigate(['../listInvouce'], { queryParams: {year:this.selected}})
+        this.router.navigate(['../listInvoices'], { queryParams: {year:this.selected}})
       }
   else{
     if(this.monthOrYear==="month")

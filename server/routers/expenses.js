@@ -1,12 +1,12 @@
 const express=require('express');
-const { addExpens,getAllExpenses,getExpenssById,getExpensesByMonth,getExpensesByYear,getExpensesBetween} = require('../modules/expenses');
+const { addExpense,getAllExpenses,getExpenssById,getExpensesByMonth,getExpensesByYear,getExpensesBetween} = require('../modules/expenses');
 
 
 const router=express.Router()
-router.post('/addExpens',express.json(),async(req,res)=>{
+router.post('/addExpense',express.json(),async(req,res)=>{
     try{
         const expens=req.body;
-        const newExpens=await addExpens(expens) 
+        const newExpens=await addExpense(expens) 
         res.status(201).json(newExpens)
     }
     catch(error){

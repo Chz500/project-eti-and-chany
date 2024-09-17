@@ -1,7 +1,6 @@
 export interface Expenses {
     date: string
     sum: number
-    //?
-    paymentMethods: string
+    paymentOptions: string
     detail: string
 }

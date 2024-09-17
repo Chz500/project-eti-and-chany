@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Invoice } from '../../modules/invoice';
 import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { Customer } from '../../modules/interfaces';
+import { Customer } from '../../modules/customer';
 import { CommonModule } from '@angular/common';
 
 @Component({

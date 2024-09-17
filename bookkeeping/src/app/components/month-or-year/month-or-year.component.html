@@ -1,11 +1,10 @@
-<p>month-or-year works!</p>
 <select  [(ngModel)]="selectedIOrE">
-    <option value="expenses">הוצאות</option>
-    <option value="invoices">קבלות</option>
+    <option value="expenses">expenses</option>
+    <option value="invoices">invoices</option>
 </select>
 <select  [(ngModel)]="monthOrYear">
-    <option value="month">חודש</option>
-    <option value="year">שנה</option>
+    <option value="month">month</option>
+    <option value="year">year</option>
 </select>
 <input type="text" [(ngModel)]="selected">
-<input type="button" value="חפש" (click)="serch()">
+<input type="button" value="search" (click)="search()">

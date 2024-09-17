@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Expenses } from '../../../modules/expenses/expenses';
+import { Expenses } from '../../../modules/expenses';
 import { DataService } from '../../../services/data.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-expenses',
@@ -12,14 +13,16 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './new-expenses.component.scss'
 })
 export class NewExpensesComponent {
-  newExpenses: Expenses = { date: '',  sum: 0,detail:'',paymentMethods:'' }
-  constructor(private dataServices: DataService) { }
+  newExpenses: Expenses = { date: '',  sum: 0,detail:'',paymentOptions:'' }
+  constructor(private dataServices: DataService,private router: Router) { }
 
-  addExpenses() {
-    console.log("addExpenses",this.newExpenses);
+  addExpensees() {
+    console.log("addExpensees",this.newExpenses);
 
-    this.dataServices.addExpenses(this.newExpenses).subscribe(data => {
+    this.dataServices.addExpensees(this.newExpenses).subscribe(data => {
       console.log({ data });
+      this.router.navigate(['../listExpenses'])
+
     })
   }
 }
