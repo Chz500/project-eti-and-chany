@@ -1,16 +1,15 @@
-<form #expensesForm="ngForm" (ngSubmit)="addExpensees()">
-    <label>expenseSum</label><br>
-    <input type="number" [(ngModel)]="newExpenses.sum" name="sum" required min="0"><br>
-    <div *ngIf="newExpenses.sum<0">A number less than zero</div>
-    <label>date</label><br>
-    <input type="date" [(ngModel)]="newExpenses.date" name="date" required   min="{{today | date:'yyyy-MM-dd' }}" (change)="validateDate()"><br>
-    <label>paymentOptions</label><br>
-    <select [(ngModel)]="newExpenses.paymentOptions" name="paymentOption" required>
-        <option value="cash">cash</option>
-        <option value="credit">credit</option>
-        <option value="bank transfer">bank transfer</option>
-    </select><br>
-    <label>details</label><br>
-    <input type="text" [(ngModel)]="newExpenses.detail" name="detail"><br>
-    <button type="submit" [disabled]="!expensesForm.form.valid">Submit</button>
+<form (submit)="addExpensees()">
+<label>expenseSum</label><br>
+<input type="number" [(ngModel)]="newExpenses.sum" name="sum"><br>
+<label>date</label><br>
+<input type="date" [(ngModel)]="newExpenses.date" name="date"><br>
+<label>paymentOptions</label><br>
+<select  [(ngModel)]="newExpenses.paymentOptions" name="paymentOption">
+    <option value="cash">cash</option>
+    <option value="credit">credit</option>
+    <option value="bank transfer">bank transfer</option>
+</select><br>
+<label>details</label><br>
+<input type="text" [(ngModel)]="newExpenses.detail" name="detail"><br>
+<input type="submit" value="save">
 </form>

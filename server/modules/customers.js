@@ -8,7 +8,6 @@ const existCustomerName = async (customerName) => {
     mongoOperations.Collection = process.env.MONGO_CUSTOMERS_COLLECTION
     try {
         const response = await mongoOperations.find({ filter: { customerName: customerName } })
-        console.log({ response });
         return response.length > 0
     } catch (error) {
         throw error
@@ -36,7 +35,6 @@ const addCustomer = async (customer) => {
     try {
         mongoOperations.Collection = process.env.MONGO_CUSTOMERS_COLLECTION
         const response = await mongoOperations.insertItem(customer)
-        console.log({ response })
         return customer
     }
     catch (error) {
@@ -48,7 +46,6 @@ const getAllCustomers = async () => {
     mongoOperations.Collection = process.env.MONGO_CUSTOMERS_COLLECTION
     try {
         const response = await mongoOperations.find({ filter: {} })
-        console.log({ response });
         return response
     } catch (error) {
         throw error
@@ -59,7 +56,6 @@ const getCustomersById = async (id) => {
     mongoOperations.Collection = process.env.MONGO_CUSTOMERS_COLLECTION
     try {
         const response = await mongoOperations.find({ filter: { custId: id } })
-        console.log({ response });
         return response
     } catch (error) {
         throw error

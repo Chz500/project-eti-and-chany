@@ -1,20 +1,10 @@
-<!-- <h1>customer list</h1> -->
-<!-- 
-<select>
-    <option value="">Select a name</option>
-    <option *ngFor="let cust of allcustomers" [value]="cust.customerName">{{cust.customerName}}</option>
-</select>
-<p></p>  -->
-
-
-
 
 <div *ngFor="let cust of allcustomers" class="cust">
-    <label>customerNum:</label>
+    <label>customerNum</label>
     <p>{{cust.custId}}</p>
-    <label>name:</label>
+    <label>name</label>
     <h4>{{cust.customerName}}</h4>
-    <label>email:</label>
+    <label>email</label>
     <p>{{cust.email}}</p>
    
 </div>
@@ -25,16 +15,3 @@
  </div>
 
 
-<!-- <p-accordion>
-    <p-accordionTab *ngFor="let customer of allcustomers">
-        <ng-template pTemplate="header">
-            <div class="head">{{ customer.customerName }}</div>
-        </ng-template>
-          <div class="accordion-content">
-            <p class="m-0">
-   
-               kkkkk
-            </p>
-        </div>
-    </p-accordionTab>
-</p-accordion>-->

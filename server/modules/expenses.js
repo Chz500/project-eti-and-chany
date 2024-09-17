@@ -12,7 +12,6 @@ const addExpense = async (expens) => {
     try {
         mongoOperations.Collection = process.env.MONGO_EXPENSES_COLLECTION
         const response = await mongoOperations.insertItem(expens)
-        console.log({ response })
         return expens
     }
     catch (error) {
@@ -24,7 +23,6 @@ const getAllExpenses = async () => {
     mongoOperations.Collection = process.env.MONGO_EXPENSES_COLLECTION
     try {
         const response = await mongoOperations.find({ filter: {} })
-        console.log({ response });
         return response
     } catch (error) {
         throw error
@@ -35,7 +33,6 @@ const getExpenssById = async (id) => {
     mongoOperations.Collection = process.env.MONGO_EXPENSES_COLLECTION
     try {
         const response = await mongoOperations.find({ filter: { expensId: id } })
-        console.log({ response });
         return response
     } catch (error) {
         throw error
