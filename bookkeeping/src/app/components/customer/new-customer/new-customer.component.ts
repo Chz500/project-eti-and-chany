@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DataService } from '../../../services/data.service';
 import { Customer } from '../../../modules/customer';
 
@@ -8,6 +8,7 @@ import { Customer } from '../../../modules/customer';
   selector: 'app-new-customer',
   standalone: true,
   imports: [ReactiveFormsModule,CommonModule],
+  providers:[Validators],
   templateUrl: './new-customer.component.html',
   styleUrl: './new-customer.component.scss'
 })
@@ -17,8 +18,8 @@ export class NewCustomerComponent {
   constructor(private dataService : DataService)
   {
     this.myForm= new FormGroup ({
-      customerName:new FormControl(''),
-      email:new FormControl(''),
+      customerName:new FormControl('', [Validators.required]),
+      email:new FormControl('', [Validators.required , Validators.email]),
     })
   }
 

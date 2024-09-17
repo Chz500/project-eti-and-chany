@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrl: './new-invoice.component.scss'
 })
 export class NewInvoiceComponent {
+  today: Date = new Date();
   allcustomers = new Array<Customer>();
   thisUserId?:number
   newInvoice: Invoice = { paymentOptions:'',details:'',sum:0 ,invoicId:0,date:'',user:{email:'',customerName:'',custId:0}}
@@ -33,5 +34,13 @@ export class NewInvoiceComponent {
     this.dataServices.getAllCustomers().subscribe(data => {
       this.allcustomers = data;
     });
+  }
+  validateDate() {
+    const selectedDate = new Date(this.newInvoice.date);
+    console.log(this.newInvoice.date);
+    const todayDate = new Date();
+    if (selectedDate < todayDate) {
+      this.newInvoice.date = '';
+    }
   }
 }

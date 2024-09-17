@@ -1,5 +1,4 @@
 <form [formGroup]="myForm" (submit)="save()" id="form">
-
     <h2>A new customer</h2>
     <label>customer name:</label><br>
     <input type="text" formControlName="customerName"><br>
@@ -7,6 +6,6 @@
     <label>email:</label><br>
     <input type="email" formControlName="email">
 
-    <input type="submit">
+    <input type="submit"  [disabled]="!myForm.valid">
 
 </form>
