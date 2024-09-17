@@ -10,15 +10,12 @@
 
 
 <div *ngFor="let cust of allcustomers" class="cust">
-    <label>שם:</label>
-    <h4>{{cust.customerName}}</h4>
-    <label>לקוח מספר:</label>
+    <label>customerNum:</label>
     <p>{{cust.custId}}</p>
-    <label>סטטוס:</label>
-
-    <p>{{cust.status ? 'פעיל' : 'לא פעיל' }}</p>
-    <label>כתובת:</label>
-    <p>{{cust.address}}</p>
+    <label>name:</label>
+    <h4>{{cust.customerName}}</h4>
+    <label>email:</label>
+    <p>{{cust.email}}</p>
 
     
    
