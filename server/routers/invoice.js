@@ -11,7 +11,6 @@ router.post('/addInvoice',express.json(),async(req,res)=>{
         res.status(201).json(newInvoice)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -26,7 +25,6 @@ router.get('/getAllInvoices',async(_,res)=>{
         res.status(201).json(allInvoices)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -43,7 +41,6 @@ router.get('/getInvoicesById/:id',async(req,res)=>{
         res.status(201).json(allInvoices)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -57,11 +54,9 @@ router.get('/getInvoicesByMonth/:month',async(req,res)=>{
     try{
         const {month} = req.params
         const invoiceByMonth=await getInvoiceByMonth(parseInt(month)) 
-        console.log({invoiceByMonth});
         res.status(201).json(invoiceByMonth)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -79,7 +74,6 @@ router.get('/getInvoicesByYear/:year',async(req,res)=>{
         res.status(201).json(invoiceByMonth)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -100,7 +94,6 @@ router.get('/getInvoicesBetween/:date1/:date2',async(req,res)=>{
         res.status(201).json(invoiceByMonth)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }
@@ -117,7 +110,6 @@ router.get('/getInvoicesByUserId/:id',async(req,res)=>{
         res.status(201).json(allInvoices)
     }
     catch(error){
-        console.log({error});
         if(error.type){
             res.status(error.type).send(error.message)
         }

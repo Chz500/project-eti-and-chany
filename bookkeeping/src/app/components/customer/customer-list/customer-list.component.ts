@@ -24,8 +24,6 @@ export class CustomerListComponent {
     });
   }
   getInvoiceById(){
-    console.log("getInvoiceById");
-    
    this.showInvoiceById=true
   }
   add(){
