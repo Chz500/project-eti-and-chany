@@ -29,8 +29,12 @@ export class InvoicesListComponent {
     this.dataServices.getAllCustomers().subscribe(data => {
       this.allcustomers = data;
     });
-
-    this.route.queryParams.subscribe(params => {
+//הוא לא הכי יעיל if else שלומ המורה אנו יודעות שהשימוש המרבה כאן ב 
+//אך משום קוצר הזמן לא היה  לנו כדאי להתעכב על כך 
+//מקוות מאד בהמשך לשפר את הקוד 
+//תודה רבה בתקווה להבנה
+//והמשך בדיקה מהנה 
+this.route.queryParams.subscribe(params => {
       this.custId = params['custId'];
       this.dateFrom = params['dateFrom']
       this.untilDate = params['untilDate']
