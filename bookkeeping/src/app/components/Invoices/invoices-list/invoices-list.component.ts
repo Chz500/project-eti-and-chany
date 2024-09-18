@@ -36,7 +36,6 @@ export class InvoicesListComponent {
       this.untilDate = params['untilDate']
       this.month = params['month']
       this.year = params['year']
-
       if (this.custId) {
         this.dataServices.getInvoiceByCustId(this.custId).subscribe(data => {
           this.allInvoice = data;
@@ -67,16 +66,5 @@ export class InvoicesListComponent {
             }
       }
     });
-
-
-
-  }
-  getByUserId(custId: number) {
-    this.dataServices.getInvoiceByCustId(custId).subscribe(data => {
-      this.allInvoice = data;
-    });
-  }
-  filter() {
-    this.toFilter = true
   }
 }
